@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #ffcccb;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #d63447;
+            font-size: 3em;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        #yesButton {
+            background-color: #d63447;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #noButton {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .meme-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .meme-container img {
+            max-width: 200px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>💖 Will You Be My Valentine? 💖</h1>
+    <p>Hey Love,</p>
+    <p>Roses are red, violets are blue,</p>
+    <p>I wrote this code just for you!</p>
+    <p>I know I'm not perfect, but here's my plea:</p>
+    <p>Will you spend Valentine's Day with me? 🥺</p>
+    <p>(I promise I'll leave my coding aside... maybe.)</p>
+
+    <!-- Meme Section -->
+    <div class="meme-container">
+        <img src="please-cat.gif" alt="Funny Meme 1">
+        <img src="rizz1.gif" alt="Funny Meme 2">
+    </div>
+
+    <button id="yesButton" onclick="sayYes()">Yes</button>
+    <button id="noButton" onmouseover="growYesButton()">No</button>
+
+    <script>
+        function sayYes() {
+            // Redirect to the new page with rizz GIFs
+            window.location.href = "rizz-page.html";
+        }
+
+        function growYesButton() {
+            const yesButton = document.getElementById('yesButton');
+            const noButton = document.getElementById('noButton');
+
+            // Increase the size of the "Yes" button
+            let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = `${currentSize * 1.2}px`;
+
+            // Move the "No" button randomly to make it harder to click
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+
+            // If the "Yes" button is big enough, cover the screen
+            if (currentSize > 100) {
+                yesButton.style.width = '100%';
+                yesButton.style.height = '100%';
+                yesButton.style.borderRadius = '0';
+                yesButton.style.fontSize = '3em';
+                yesButton.innerHTML = "YOU HAVE NO CHOICE! YES! 💖";
+                noButton.style.display = 'none'; // Hide the "No" button
+            }
+        }
+    </script>
+</body>
+
+</html>

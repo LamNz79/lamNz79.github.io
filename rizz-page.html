@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Said Yes! 💖</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #ffcccb;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #d63447;
+            font-size: 3em;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .gif-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .gif-container img {
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        .music-player {
+            margin-top: 30px;
+        }
+
+        .music-player audio {
+            width: 300px;
+            height: 50px;
+            background-color: #d63447;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        .music-player audio::-webkit-media-controls-panel {
+            background-color: #d63447;
+            border-radius: 25px;
+        }
+
+        .music-player audio::-webkit-media-controls-play-button,
+        .music-player audio::-webkit-media-controls-mute-button {
+            filter: invert(1);
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>You Said Yes! 💖</h1>
+    <p>Here's some rizz to celebrate!</p>
+
+    <!-- Rizz GIFs -->
+    <div class="gif-container">
+        <img src="skibidi-rizz-skibidi-toilet.gif" alt="Rizz GIF 1">
+        <img src="rizz2.gif" alt="Rizz GIF 2">
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <p>Let's set the mood with some romantic music 🎶</p>
+        <audio controls autoplay loop>
+            <source
+                src="https://ia801300.us.archive.org/19/items/GrowOldWithYouAdamSandler/Grow%20Old%20With%20You%20%28Adam%20Sandler%29.mp3"
+                type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <p>Let's make this Valentine's Day unforgettable! ❤️</p>
+</body>
+
+</html>
